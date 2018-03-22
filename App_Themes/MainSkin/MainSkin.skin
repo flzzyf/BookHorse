@@ -1,2 +1,2 @@
 ﻿
-<asp:Button runat="server" BlackColor="#FFFFC0"/>
+<asp:Button runat="server" BackColor="#FFEFC0" SkinID="GreenButton"/>
