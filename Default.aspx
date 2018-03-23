@@ -9,9 +9,13 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        
+    <div align="center">
+        <asp:Button ID="Button3" runat="server" Text="Button"/>
+        <br />
         <asp:Button ID="Button1" runat="server" Text="Button" SkinID="GreenButton"/>
+        <br />
+        <asp:Button ID="Button2" runat="server" Text="Button" SkinID="GreenButton2"/>
+
         
     </div>
     </form>
