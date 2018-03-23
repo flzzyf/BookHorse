@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <table width="90%" align="center">
+            <tr align="center">
+                <td height="80">
+                    <asp:HyperLink ID="HyperLink1" runat="server">魔法</asp:HyperLink>
+                    &nbsp;
+                    <asp:HyperLink ID="HyperLink2" runat="server">草药</asp:HyperLink>
+
+                </td>
+            </tr>
+            <tr align="center">
+                <td height="200">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        qwe
+                    </asp:ContentPlaceHolder>
+                </td>
+            </tr>
+            <tr align="center">
+                <td height="50">
+                    wtf
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
+
