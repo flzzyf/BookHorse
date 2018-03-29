@@ -23,8 +23,8 @@
             <asp:View ID="View2" runat="server">
                 <asp:Panel ID="Panel2" runat="server">
                     <div class="auto-style1">
-                        <asp:HyperLink ID="HyperLink1" runat="server">注销</asp:HyperLink>
-                        &nbsp;<asp:HyperLink ID="HyperLink2" runat="server">修改个人信息</asp:HyperLink>
+                        <asp:Button ID="bt_logout" runat="server" Height="28px" OnClick="bt_logout_Click" Text="注销" Width="50px" />
+                        &nbsp;<asp:Button ID="bt_modify" runat="server" Height="28px" Text="修改个人信息" />
                     </div>
                 </asp:Panel>
             </asp:View>
