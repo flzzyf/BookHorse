@@ -13,7 +13,15 @@
 
 </asp:Content>
 
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content4" ContentPlaceHolderID="Navi" Runat="Server">
+        
+    <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+
+    </asp:SiteMapPath>
+        
+</asp:Content>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" Runat="Server">
     <uc1:MainMenu runat="server" ID="MainMenu" />
 
     内容qweqewqewqeeqeqweqweqwewqewq

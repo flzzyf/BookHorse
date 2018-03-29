@@ -24,15 +24,17 @@
         <div id="main">
             <div id="left">
                 <asp:ContentPlaceHolder ID="Left" runat="server">
-                        qwe
+                        左边
                 </asp:ContentPlaceHolder>
             </div>
             <div id="navigator">
-                导航区
+                <asp:ContentPlaceHolder ID="Navi" runat="server">
+                        导航区
+                </asp:ContentPlaceHolder>
             </div>
             <div id="content">
-                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                        qwe
+                <asp:ContentPlaceHolder ID="Content" runat="server">
+                        内容
                 </asp:ContentPlaceHolder>
             </div>
         </div>

@@ -11,10 +11,17 @@
 
     <form id="form1" runat="server">
         <br />
-        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
-        </asp:Menu>
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:TreeView>
         <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
         <br />
+        <br />
+        <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:Menu>
+        <br />
+        <br />
+        <asp:SiteMapPath ID="SiteMapPath1" runat="server">
+        </asp:SiteMapPath>
     </form>
 
 </body>
