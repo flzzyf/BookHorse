@@ -14,7 +14,7 @@
                         <asp:TextBox ID="tb_username" runat="server"></asp:TextBox>
                         <br />
                         <asp:Label ID="Password" runat="server" Text="密码"></asp:Label>
-                        <asp:TextBox ID="tb_password" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="tb_password" runat="server" TextMode="Password"></asp:TextBox>
                         <br />
                         <asp:Button ID="bt_login" runat="server" Text="登录" OnClick="bt_login_Click" />
                     </div>

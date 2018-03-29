@@ -7,11 +7,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
     标题
 </asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="Left" Runat="Server">
+        <uc1:UserLogin runat="server" ID="UserLogin" />
+
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <uc1:MainMenu runat="server" ID="MainMenu" />
 
     内容qweqewqewqeeqeqweqweqwewqewq
 
-    <uc1:UserLogin runat="server" ID="UserLogin" />
 </asp:Content>
 

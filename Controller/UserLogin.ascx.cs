@@ -28,16 +28,13 @@ public partial class Controller_UserLogin : System.Web.UI.UserControl
         {
             BookUser user = new BookUser("Zyf");
             Session["user"] = user;
-            //Response.Redirect("Main.aspx");
             Response.Redirect(Request.Url.ToString());
         }
     }
 
     protected void bt_logout_Click(object sender, EventArgs e)
     {
-        //Session["user"] = null;
-        Session.Abandon();
-        //Response.Redirect("Main.aspx");
+        Session["user"] = null;
         Response.Redirect(Request.Url.ToString());
     }
 }

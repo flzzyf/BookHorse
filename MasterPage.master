@@ -23,7 +23,9 @@
         </div>
         <div id="main">
             <div id="left">
-                左边
+                <asp:ContentPlaceHolder ID="Left" runat="server">
+                        qwe
+                </asp:ContentPlaceHolder>
             </div>
             <div id="navigator">
                 导航区

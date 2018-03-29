@@ -46,6 +46,15 @@
                 </asp:Panel>
             </asp:View>
         </asp:MultiView>
+        <asp:Panel ID="Panel3" runat="server">
+            <asp:Label ID="Label1" runat="server" Text="查询图书："></asp:Label>
+            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatColumns="2">
+                <asp:ListItem>按书名</asp:ListItem>
+                <asp:ListItem>按作者</asp:ListItem>
+            </asp:RadioButtonList>
+            <asp:Button ID="bt_search" runat="server" OnClick="bt_search_Click" Text="查询" />
+            <br />
+        </asp:Panel>
     </form>
 </body>
 </html>
