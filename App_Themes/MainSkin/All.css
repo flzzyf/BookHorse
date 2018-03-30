@@ -1,5 +1,5 @@
 ﻿body {
-    font-size: 44px;
+    font-size: 15px;
     font-family: 黑体, Arial;
     text-align: center;
 }
@@ -10,7 +10,7 @@ a{
 }
 
 div{
-    font-size: 30px;
+    font-size: 15px;
 
 }
 
@@ -19,8 +19,10 @@ div{
 }
 
 #title{
+    font-size: 25px;
+
     height: 65px;
-    font-size: 30px;
+    font-size: 15px;
 }
 
 #mainMenu {
