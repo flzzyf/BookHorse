@@ -24,7 +24,7 @@ public partial class Web_DBTest : System.Web.UI.Page
     {
         DBConnect.StartConnection();
 
-        string sql = "select * from Book where name like '%" + _s + "%'";
+        string sql = "select * from Book where id like '%" + _s + "%'";
 
         SqlDataReader dr = DBConnect.ExecuteSql(sql);
 
