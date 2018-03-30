@@ -2,6 +2,8 @@
 
 <%@ Register Src="~/Controller/UserLogin.ascx" TagPrefix="uc1" TagName="UserLogin" %>
 <%@ Register Src="~/Controller/MainMenu.ascx" TagPrefix="uc1" TagName="MainMenu" %>
+<%@ Register Src="~/Controller/SearchBook.ascx" TagPrefix="uc1" TagName="SearchBook" %>
+
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
@@ -9,8 +11,9 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="Left" Runat="Server">
-        <uc1:UserLogin runat="server" ID="UserLogin" />
+    <uc1:UserLogin runat="server" ID="UserLogin" />
 
+    <uc1:SearchBook runat="server" id="SearchBook" />
 </asp:Content>
 
 <asp:Content ID="Content4" ContentPlaceHolderID="Navi" Runat="Server">

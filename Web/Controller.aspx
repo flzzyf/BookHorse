@@ -18,8 +18,6 @@
     
     </div>
         <asp:Panel ID="search" runat="server" Height="122px">
-            <asp:TextBox ID="search_tb" runat="server"></asp:TextBox>
-            <asp:Button ID="search_bt" runat="server" Text="搜索" />
         </asp:Panel>
 
 
@@ -46,13 +44,15 @@
                 </asp:Panel>
             </asp:View>
         </asp:MultiView>
-        <asp:Panel ID="Panel3" runat="server">
-            <asp:Label ID="Label1" runat="server" Text="查询图书："></asp:Label>
-            <asp:RadioButtonList ID="RadioButtonList1" runat="server" RepeatColumns="2">
+
+        <asp:Panel ID="search_panel" runat="server" style="text-align: center">
+            <asp:Label ID="Label1" runat="server" Text="查询图书：" Font-Bold="True" Font-Size="Large"></asp:Label>
+            <asp:RadioButtonList ID="search_radio" runat="server" RepeatColumns="2">
                 <asp:ListItem>按书名</asp:ListItem>
                 <asp:ListItem>按作者</asp:ListItem>
             </asp:RadioButtonList>
-            <asp:Button ID="bt_search" runat="server" OnClick="bt_search_Click" Text="查询" />
+            <asp:TextBox ID="search_tb" runat="server"></asp:TextBox>
+            <asp:Button ID="search_bt" runat="server" Text="查询" />
             <br />
         </asp:Panel>
     </form>

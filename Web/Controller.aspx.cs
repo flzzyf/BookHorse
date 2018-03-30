@@ -12,8 +12,4 @@ public partial class Web_Controller : System.Web.UI.Page
 
     }
 
-    protected void bt_search_Click(object sender, EventArgs e)
-    {
-        //查询
-    }
 }
