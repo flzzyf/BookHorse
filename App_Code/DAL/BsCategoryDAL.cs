@@ -26,18 +26,19 @@ public class BsCategoryDAL : IBsCategoryDAL
     }
     public int DeleteBsCategory(int id)
     {
-        SqlConnection con = ConnectDB.Connect();
+        DBConnect.StartConnection();
+
         string sql = String.Format("delete from BsCategory where id={0}", id);
-        SqlCommand cmd = new SqlCommand(sql, con);
-        con.Open();
+        SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
         int num = cmd.ExecuteNonQuery();
-        con.Close();
+
+        DBConnect.EndConnection();
         return num;
     }
     public IList<BsCategory> FindBsCategories()
     {
-        //SqlConnection con = ConnectDB.StartConnection();
         DBConnect.StartConnection();
+
         IList<BsCategory> list = new List<BsCategory>();
         string sql = "select * from BsCategory";
         SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
@@ -55,6 +56,8 @@ public class BsCategoryDAL : IBsCategoryDAL
                 list.Add(c);
             }
         }
+        DBConnect.EndConnection();
+
         return list;
     }
 }

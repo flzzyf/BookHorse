@@ -33,4 +33,21 @@ public class BsCategory
         get { return _Name; }
         set { _Name = value; }
     }
+
+    public DataSet Select(int a)
+    {
+        DataSet data = new DataSet();
+
+        return data;
+    }
+
+    public void Update(int a)
+    {
+
+    }
+
+    public void Delete(int a)
+    {
+
+    }
 }

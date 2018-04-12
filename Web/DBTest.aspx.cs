@@ -44,5 +44,7 @@ public partial class Web_DBTest : System.Web.UI.Page
         BsCategoryDAL bsCat = new BsCategoryDAL();
         GridView1.DataSource = bsCat.FindBsCategories();
         GridView1.DataBind();
+
+        //ObjectDataSource1.
     }
 }
