@@ -38,4 +38,11 @@ public partial class Web_DBTest : System.Web.UI.Page
     }
 
 
+
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        BsCategoryDAL bsCat = new BsCategoryDAL();
+        GridView1.DataSource = bsCat.FindBsCategories();
+        GridView1.DataBind();
+    }
 }

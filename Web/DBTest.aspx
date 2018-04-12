@@ -16,6 +16,14 @@
             <asp:Button ID="bt_search" runat="server" OnClick="bt_search_Click" Text="搜索" />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+            <br />
+            <br />
+            <asp:Panel ID="Panel2" runat="server">
+                <asp:GridView ID="GridView1" runat="server">
+                </asp:GridView>
+                <br />
+                <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="按钮" />
+            </asp:Panel>
         </asp:Panel>
     
     </div>

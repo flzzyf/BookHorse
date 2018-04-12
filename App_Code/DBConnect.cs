@@ -9,9 +9,9 @@ using System.Data.SqlClient;
 /// </summary>
 public class DBConnect
 {
-    static SqlConnection connection;
+    public static SqlConnection connection;
 
-    public static void StartConnection(string uid = "sa", string pwd = "123", string db = "Bookhorse_24")
+    public static void StartConnection(string uid = "sa", string pwd = "123", string db = "BookStore")
     {
         string connectString = "uid=" + uid + ";pwd=" + pwd + ";database=" + db;
         connection = new SqlConnection(connectString);
