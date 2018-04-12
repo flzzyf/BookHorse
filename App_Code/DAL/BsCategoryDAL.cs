@@ -6,22 +6,24 @@ public class BsCategoryDAL : IBsCategoryDAL
 {
     public int AddBsCategory(BsCategory bsCategory)
     {
-        SqlConnection con = ConnectDB.Connect();
+        DBConnect.StartConnection();
+
         string sql = String.Format("insert into BsCategory(name) values('{0}')", bsCategory.Name);
-        SqlCommand cmd = new SqlCommand(sql, con);
-        con.Open();
+        SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
         int num = cmd.ExecuteNonQuery();
-        con.Close();
+
+        DBConnect.EndConnection();
         return num;
     }
     public int EditBsCategory(BsCategory bsCategory)
     {
-        SqlConnection con = ConnectDB.Connect();
+        DBConnect.StartConnection();
+
         string sql = String.Format("update BsCategory set name='{0}' where id={1}", bsCategory.Name, bsCategory.ID);
-        SqlCommand cmd = new SqlCommand(sql, con);
-        con.Open();
+        SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
         int num = cmd.ExecuteNonQuery();
-        con.Close();
+        DBConnect.EndConnection();
+
         return num;
     }
     public int DeleteBsCategory(int id)

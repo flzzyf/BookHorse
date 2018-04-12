@@ -51,26 +51,55 @@
                     </DeleteParameters>
                 </asp:ObjectDataSource>
                 <br />
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" DeleteCommand="DELETE FROM [BsCategory] WHERE [ID] = @ID" InsertCommand="INSERT INTO [BsCategory] ([Name]) VALUES (@Name)" SelectCommand="SELECT * FROM [BsCategory]" UpdateCommand="UPDATE [BsCategory] SET [Name] = @Name WHERE [ID] = @ID">
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConflictDetection="CompareAllValues" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" DeleteCommand="DELETE FROM [BsBook] WHERE [ID] = @original_ID AND [CatID] = @original_CatID AND [Name] = @original_Name AND (([Image] = @original_Image) OR ([Image] IS NULL AND @original_Image IS NULL)) AND [Price] = @original_Price AND [Summary] = @original_Summary AND [Author] = @original_Author" InsertCommand="INSERT INTO [BsBook] ([CatID], [Name], [Image], [Price], [Summary], [Author]) VALUES (@CatID, @Name, @Image, @Price, @Summary, @Author)" OldValuesParameterFormatString="original_{0}" SelectCommand="SELECT * FROM [BsBook]" UpdateCommand="UPDATE [BsBook] SET [CatID] = @CatID, [Name] = @Name, [Image] = @Image, [Price] = @Price, [Summary] = @Summary, [Author] = @Author WHERE [ID] = @original_ID AND [CatID] = @original_CatID AND [Name] = @original_Name AND (([Image] = @original_Image) OR ([Image] IS NULL AND @original_Image IS NULL)) AND [Price] = @original_Price AND [Summary] = @original_Summary AND [Author] = @original_Author">
                     <DeleteParameters>
-                        <asp:Parameter Name="ID" Type="Int32" />
+                        <asp:Parameter Name="original_ID" Type="Int32" />
+                        <asp:Parameter Name="original_CatID" Type="Int32" />
+                        <asp:Parameter Name="original_Name" Type="String" />
+                        <asp:Parameter Name="original_Image" Type="String" />
+                        <asp:Parameter Name="original_Price" Type="Decimal" />
+                        <asp:Parameter Name="original_Summary" Type="String" />
+                        <asp:Parameter Name="original_Author" Type="String" />
                     </DeleteParameters>
                     <InsertParameters>
+                        <asp:Parameter Name="CatID" Type="Int32" />
                         <asp:Parameter Name="Name" Type="String" />
+                        <asp:Parameter Name="Image" Type="String" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
+                        <asp:Parameter Name="Summary" Type="String" />
+                        <asp:Parameter Name="Author" Type="String" />
                     </InsertParameters>
                     <UpdateParameters>
+                        <asp:Parameter Name="CatID" Type="Int32" />
                         <asp:Parameter Name="Name" Type="String" />
-                        <asp:Parameter Name="ID" Type="Int32" />
+                        <asp:Parameter Name="Image" Type="String" />
+                        <asp:Parameter Name="Price" Type="Decimal" />
+                        <asp:Parameter Name="Summary" Type="String" />
+                        <asp:Parameter Name="Author" Type="String" />
+                        <asp:Parameter Name="original_ID" Type="Int32" />
+                        <asp:Parameter Name="original_CatID" Type="Int32" />
+                        <asp:Parameter Name="original_Name" Type="String" />
+                        <asp:Parameter Name="original_Image" Type="String" />
+                        <asp:Parameter Name="original_Price" Type="Decimal" />
+                        <asp:Parameter Name="original_Summary" Type="String" />
+                        <asp:Parameter Name="original_Author" Type="String" />
                     </UpdateParameters>
                 </asp:SqlDataSource>
                 <asp:GridView ID="GridView3" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1">
                     <Columns>
                         <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" />
                         <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                        <asp:BoundField DataField="CatID" HeaderText="CatID" SortExpression="CatID" />
                         <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                        <asp:BoundField DataField="Image" HeaderText="Image" SortExpression="Image" />
+                        <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                        <asp:BoundField DataField="Summary" HeaderText="Summary" SortExpression="Summary" />
+                        <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
                     </Columns>
                 </asp:GridView>
                 <br />
+                <br />
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Web/addcategory.aspx">add</asp:HyperLink>
             </asp:Panel>
         </asp:Panel>
     

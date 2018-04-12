@@ -28,16 +28,15 @@ public class ConnectDB
 
             SqlConnection con = new SqlConnection(connectString);
           
-            //con.ConnectionString = "Persist Security Info=False;Integrated Security=SSPI;database=BookStore;server=WWW-E2BDCCB29F0\\SQLEXPRESS;Connect Timeout=30";
+            //con.ConnectionString = "Persist Security Info=False;Integrated Security=SSPI;database=bookstore;server=WWW-E2BDCCB29F0\\SQLEXPRESS;Connect Timeout=30";
 
-            con.ConnectionString = "server=WWW-E2BDCCB29F0\\SQLEXPRESS;uid=sa;pwd=123456;database=BookStore";
-            /*
-            OleDbConnection con = new OleDbConnection();
-            con.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|pho.mdb";
-            con.ConnectionString = "Driver={Microsoft Access Driver(*.mdb)};DBQ=|DataDirectory|pho.mdb";
-            con.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Password=;User ID=Admin;Data Source=|DataDirectory|pho.mdb";
-            */
-           con.Open();
+            //con.ConnectionString = "server=WWW-E2BDCCB29F0\\SQLEXPRESS;uid=yang;pwd=1234;database=bookstore";
+            //OleDbConnection con = new OleDbConnection();
+            //con.ConnectionString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=|DataDirectory|pho.mdb";
+            //con.ConnectionString = "Driver={Microsoft Access Driver(*.mdb)};DBQ=|DataDirectory|pho.mdb";
+            //con.ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Password=;User ID=Admin;Data Source=|DataDirectory|pho.mdb";
+
+            //con.Open();
             return con;
         }
         catch (Exception e)
@@ -45,14 +44,5 @@ public class ConnectDB
             Console.WriteLine(e.Message);
             return null;
         }
-    }
-
-    static SqlConnection connection;
-    public static SqlConnection StartConnection(string uid = "sa", string pwd = "123", string db = "BookStore")
-    {
-        string connectString = "uid=" + uid + ";pwd=" + pwd + ";database=" + db;
-        connection = new SqlConnection(connectString);
-        connection.Open();
-        return connection;
     }
 }
