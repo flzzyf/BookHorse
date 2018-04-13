@@ -108,20 +108,22 @@ public abstract class SqlHelper
     /// <returns>包含结果的读取器</returns>
     public static SqlDataReader ExecuteReader(string sql, params SqlParameter[] cmdParms)
     {
-        SqlConnection conn = ConnectDB.Connect();
+        DBConnect.StartConnection();
+        SqlConnection conn = DBConnect.connection;
         SqlCommand cmd = new SqlCommand(sql, conn);
         foreach (SqlParameter parm in cmdParms)
             cmd.Parameters.Add(parm);
         try
         {
-            conn.Open();
             SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+
             return dr;
         }
         catch
         {
             return null;
         }
+
     }
 
     /// <summary>
