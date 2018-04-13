@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
+using System.Configuration;
 
 /// <summary>
 /// DBConnect 的摘要说明
@@ -11,7 +12,15 @@ public class DBConnect
 {
     public static SqlConnection connection;
 
-    public static void StartConnection(string uid = "sa", string pwd = "123", string db = "BookStore")
+    private static String connectionString = 
+        ConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
+
+    public static void StartConnection()
+    {
+        connection = new SqlConnection(connectionString);
+        connection.Open();
+    }
+    public static void StartConnection(string uid, string pwd, string db)
     {
         string connectString = "uid=" + uid + ";pwd=" + pwd + ";database=" + db;
         connection = new SqlConnection(connectString);
