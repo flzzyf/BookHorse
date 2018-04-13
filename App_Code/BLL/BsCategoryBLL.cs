@@ -17,8 +17,13 @@ public class BsCategoryBLL : IBsCategoryBLL
     {
         return bsCategoryDAL.DeleteBsCategory(id);
     }
+
     public IList<BsCategory> FindBsCategories()
     {
         return bsCategoryDAL.FindBsCategories();
+    }
+    public IList<BsCategory> FindBsCategories(int _id = -1)
+    {
+        return bsCategoryDAL.FindBsCategories(_id);
     }
 }

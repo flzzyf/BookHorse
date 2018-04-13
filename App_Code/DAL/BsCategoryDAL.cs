@@ -42,7 +42,10 @@ public class BsCategoryDAL : IBsCategoryDAL
         DBConnect.StartConnection();
 
         IList<BsCategory> list = new List<BsCategory>();
-        string sql = "select * from BsCategory";
+
+        string sql;
+        sql = "select * from BsCategory";
+
         SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
         SqlDataAdapter da = new SqlDataAdapter(cmd);
         DataTable dt = new DataTable();
@@ -62,4 +65,34 @@ public class BsCategoryDAL : IBsCategoryDAL
 
         return list;
     }
+
+    public IList<BsCategory> FindBsCategories(int _id = -1)
+    {
+        DBConnect.StartConnection();
+
+        IList<BsCategory> list = new List<BsCategory>();
+
+        string sql;
+        sql = "select * from BsCategory where ID=" + _id;
+
+        SqlCommand cmd = new SqlCommand(sql, DBConnect.connection);
+        SqlDataAdapter da = new SqlDataAdapter(cmd);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        if (dt != null)
+        {
+            BsCategory c = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                c = new BsCategory();
+                c.ID = Int32.Parse(row["id"].ToString());
+                c.Name = row["name"].ToString();
+                list.Add(c);
+            }
+        }
+        DBConnect.EndConnection();
+
+        return list;
+    }
+
 }

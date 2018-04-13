@@ -17,11 +17,20 @@ public partial class Web_UpdateCategory : System.Web.UI.Page
             //DetailsView1.
 
         }
+
+        Table1.Style.Add("bgcolor", "#FFFFFF");
     }
 
     protected void Button1_Click(object sender, EventArgs e)
     {
-        int index = DropDownList1.SelectedIndex;
+        int index = int.Parse(DropDownList1.SelectedItem.Value);
+
+        Response.Redirect("UpdateCategory.aspx?index=" + index);
+    }
+
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        int index = int.Parse(RadioButtonList1.SelectedValue);
 
         Response.Redirect("UpdateCategory.aspx?index=" + index);
     }

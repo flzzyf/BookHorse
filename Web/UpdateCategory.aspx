@@ -15,6 +15,9 @@
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
+            <SelectParameters>
+                <asp:QueryStringParameter DefaultValue="1" Name="_id" QueryStringField="index" Type="Int32" />
+            </SelectParameters>
         </asp:ObjectDataSource>
         <br />
         <asp:DetailsView ID="DetailsView1" runat="server" DataSourceID="ObjectDataSource1" DefaultMode="Edit" Height="50px" Width="125px" AutoGenerateRows="False" CellPadding="4" ForeColor="#333333" GridLines="None">
@@ -40,10 +43,21 @@
         <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
         <br />
         <br />
+        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <br />
+        <br />
+        <asp:RadioButtonList ID="RadioButtonList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Name" DataValueField="ID">
+        </asp:RadioButtonList>
+        <br />
+        <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
+        <br />
+        <br />
+        <Table ID="Table1" runat="server">
+            qwer
+        </Table>
         <br />
     
     </div>
-        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
     </form>
 </body>
 </html>
