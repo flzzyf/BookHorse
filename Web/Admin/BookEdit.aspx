@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div>
     
-        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="BsBook" DeleteMethod="DeleteBsBook" SelectMethod="FindBsBook" TypeName="BsBookBLL" UpdateMethod="EditBsBook">
+        <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="BsBook" DeleteMethod="DeleteBsBook" SelectMethod="FindBsBook" TypeName="BsBookBLL" UpdateMethod="EditBsBook" OnUpdated="ObjectDataSource1_Updated">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
@@ -20,7 +20,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
         <br />
-        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" DefaultMode="Edit" ForeColor="#333333" GridLines="None" Height="50px" HorizontalAlign="Center" Width="432px">
+        <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" CellPadding="4" DataSourceID="ObjectDataSource1" DefaultMode="Edit" ForeColor="#333333" GridLines="None" Height="50px" HorizontalAlign="Center" Width="432px" OnItemUpdated="DetailsView1_ItemUpdated" OnModeChanging="DetailsView1_ModeChanging">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
             <EditRowStyle BackColor="#999999" />
@@ -48,7 +48,7 @@
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
                 <asp:TemplateField HeaderText="简介" SortExpression="Summary">
                     <EditItemTemplate>
-                        <asp:TextBox ID="TextBox2" runat="server" Height="88px" Text='<%# Bind("CatID") %>' TextMode="MultiLine" Width="224px"></asp:TextBox>
+                        <asp:TextBox ID="TextBox2" runat="server" Height="173px" Text='<%# Bind("Summary") %>' TextMode="MultiLine" Width="319px"></asp:TextBox>
                     </EditItemTemplate>
                     <InsertItemTemplate>
                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("CatID") %>'></asp:TextBox>
@@ -66,6 +66,9 @@
             <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
         </asp:DetailsView>
+        <br />
+        <br />
+        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
         <br />
     
     </div>
