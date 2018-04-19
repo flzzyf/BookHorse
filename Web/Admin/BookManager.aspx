@@ -28,7 +28,7 @@
         <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AutoGenerateColumns="False" CellPadding="4" DataSourceID="ObjectDataSource1" ForeColor="#333333" GridLines="None" AllowSorting="True" DataKeyNames="ID" HorizontalAlign="Center">
             <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
             <Columns>
-                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="/BookShow.aspx?id={0}" DataTextField="ID" HeaderText="ID">
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/Web/User/BookShow.aspx?bookID={0}" DataTextField="ID" HeaderText="ID">
                 <HeaderStyle Width="40px" />
                 </asp:HyperLinkField>
                 <asp:TemplateField HeaderText="类别" SortExpression="CatID">
@@ -51,7 +51,7 @@
                     <HeaderStyle Width="120px" />
                 </asp:BoundField>
 
-                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="BookEdit.aspx?id={0}" Text="编辑" >
+                <asp:HyperLinkField DataNavigateUrlFields="ID" DataNavigateUrlFormatString="~/Web/Admin/BookEdit.aspx?bookID={0}" Text="编辑" >
                 <HeaderStyle Width="40px" />
                 </asp:HyperLinkField>
                 <asp:CommandField ShowDeleteButton="True" >
