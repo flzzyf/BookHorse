@@ -16,7 +16,7 @@ using System.Data.OleDb;
 /// </summary>
 public class ConnectDB
 {
-    private static String connectString = ConfigurationManager.ConnectionStrings["connectString"].ConnectionString;
+    private static String connectString = ConfigurationManager.ConnectionStrings["BookStoreConnectionString"].ConnectionString;
     //public static SqlConnection connect()
     //public static OleDbConnection connect()
     public static SqlConnection Connect()
