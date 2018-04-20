@@ -5,8 +5,13 @@
 }
 
 a{
-    color: #4cff00;
+    color: rebeccapurple;
     text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+
 }
 
 div{
