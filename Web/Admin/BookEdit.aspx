@@ -71,6 +71,24 @@
         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
         <br />
         <br />
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT * FROM [BsBook] WHERE ([ID] = @ID)">
+            <SelectParameters>
+                <asp:QueryStringParameter Name="ID" QueryStringField="bookID" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <br />
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" HorizontalAlign="Center">
+            <Columns>
+                <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
+                <asp:BoundField DataField="CatID" HeaderText="CatID" SortExpression="CatID" />
+                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
+                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
+            </Columns>
+        </asp:GridView>
+        <br />
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT * FROM [BsCategory]"></asp:SqlDataSource>
+        <br />
     
     </div>
     </form>

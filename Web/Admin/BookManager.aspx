@@ -108,7 +108,7 @@
                         <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                     </EditItemTemplate>
                     <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" Text='<%# ((BsCategory)Eval("BsCategory")).Name %>'></asp:Label>
+                        <asp:Label ID="Label1" runat="server"></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Name" HeaderText="书名" SortExpression="Name" />
