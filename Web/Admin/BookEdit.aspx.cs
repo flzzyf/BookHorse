@@ -12,6 +12,9 @@ public partial class Web_Admin_BookEdit : System.Web.UI.Page
 
     }
 
+    string bookManager = "~/Web/Admin/BookManager.aspx";
+    string bookManagerAbs = "BookManager.aspx";
+
     protected void ObjectDataSource1_Updated(object sender, ObjectDataSourceStatusEventArgs e)
     {
         e.AffectedRows = (int)e.ReturnValue;
@@ -26,7 +29,7 @@ public partial class Web_Admin_BookEdit : System.Web.UI.Page
             if(e.AffectedRows > 0)
             {
                 this.ClientScript.RegisterClientScriptBlock(this.GetType(), "",
-                "alert('修改成功');window.location.href='~/Web/Admin/BookManager.aspx'", true);
+                "alert('修改成功');window.location.href='" + bookManagerAbs + "'", true);
                 return;
             }
         }
@@ -37,7 +40,7 @@ public partial class Web_Admin_BookEdit : System.Web.UI.Page
     {
         if(e.CancelingEdit)
         {
-            Response.Redirect("~/Web/Admin/BookManage.aspx");
+            Response.Redirect("~/Web/Admin/BookManager.aspx");
         }
     }
 
