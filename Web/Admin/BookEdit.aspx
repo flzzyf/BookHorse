@@ -71,23 +71,73 @@
         <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
         <br />
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT * FROM [BsBook] WHERE ([ID] = @ID)">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" DeleteCommand="DELETE FROM [BsBook] WHERE [ID] = @ID" InsertCommand="INSERT INTO [BsBook] ([CatID], [Name], [Image], [Price], [Summary], [Author]) VALUES (@CatID, @Name, @Image, @Price, @Summary, @Author)" SelectCommand="SELECT * FROM [BsBook] WHERE ([ID] = @ID)" UpdateCommand="UPDATE [BsBook] SET [CatID] = @CatID, [Name] = @Name, [Image] = @Image, [Price] = @Price, [Summary] = @Summary, [Author] = @Author WHERE [ID] = @ID">
+            <DeleteParameters>
+                <asp:Parameter Name="ID" Type="Int32" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="CatID" Type="Int32" />
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="Image" Type="String" />
+                <asp:Parameter Name="Price" Type="Decimal" />
+                <asp:Parameter Name="Summary" Type="String" />
+                <asp:Parameter Name="Author" Type="String" />
+            </InsertParameters>
             <SelectParameters>
                 <asp:QueryStringParameter Name="ID" QueryStringField="bookID" Type="Int32" />
             </SelectParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="CatID" Type="Int32" />
+                <asp:Parameter Name="Name" Type="String" />
+                <asp:Parameter Name="Image" Type="String" />
+                <asp:Parameter Name="Price" Type="Decimal" />
+                <asp:Parameter Name="Summary" Type="String" />
+                <asp:Parameter Name="Author" Type="String" />
+                <asp:Parameter Name="ID" Type="Int32" />
+            </UpdateParameters>
         </asp:SqlDataSource>
-        <br />
-        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="ID" DataSourceID="SqlDataSource1" HorizontalAlign="Center">
-            <Columns>
+        <asp:DetailsView ID="DetailsView2" runat="server" AutoGenerateRows="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" DataKeyNames="ID" DataSourceID="SqlDataSource1" DefaultMode="Edit" ForeColor="Black" GridLines="Vertical" Height="50px" HorizontalAlign="Center" Width="452px">
+            <AlternatingRowStyle BackColor="White" />
+            <EditRowStyle BackColor="#CE5D5A" Font-Bold="True" ForeColor="White" />
+            <Fields>
                 <asp:BoundField DataField="ID" HeaderText="ID" InsertVisible="False" ReadOnly="True" SortExpression="ID" />
-                <asp:BoundField DataField="CatID" HeaderText="CatID" SortExpression="CatID" />
+                <asp:TemplateField HeaderText="CatID" SortExpression="CatID">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("CatID") %>'></asp:TextBox>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("CatID") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:DropDownList ID="DropDownList3" runat="server" DataSourceID="SqlDataSource2" DataTextField="Name" DataValueField="ID">
+                        </asp:DropDownList>
+                        <br />
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT * FROM [BsCategory]"></asp:SqlDataSource>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
                 <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
+                <asp:TemplateField HeaderText="Summary" SortExpression="Summary">
+                    <EditItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Height="107px" Text='<%# Bind("Summary") %>' TextMode="MultiLine" Width="255px"></asp:TextBox>
+                    </EditItemTemplate>
+                    <InsertItemTemplate>
+                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Summary") %>'></asp:TextBox>
+                    </InsertItemTemplate>
+                    <ItemTemplate>
+                        <asp:Label ID="Label1" runat="server" Text='<%# Bind("Summary") %>'></asp:Label>
+                    </ItemTemplate>
+                </asp:TemplateField>
                 <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
-            </Columns>
-        </asp:GridView>
+                <asp:CommandField ShowEditButton="True" />
+            </Fields>
+            <FooterStyle BackColor="#CCCC99" />
+            <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#F7F7DE" ForeColor="Black" HorizontalAlign="Right" />
+            <RowStyle BackColor="#F7F7DE" />
+        </asp:DetailsView>
         <br />
-        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:BookStoreConnectionString %>" SelectCommand="SELECT * FROM [BsCategory]"></asp:SqlDataSource>
+        <br />
         <br />
     
     </div>
