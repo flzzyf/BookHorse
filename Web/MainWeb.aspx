@@ -51,11 +51,11 @@
             </GroupTemplate>
             
             <ItemTemplate>
-                <td runat="server" style="width: 300px">
+                <td runat="server" style="width: 400px">
                     <table style="width: 100%">
                         <tr>
                             <td rowspan="4">
-                                <asp:Image ID="Image1" runat="server" />
+                                <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("Image", "~/Web/Common/BookImages/{0}") %>' Width="97px" Height="124"/>
                             </td>
                             <td>书名：</td>
                             <td style="width: 191px">
@@ -106,6 +106,8 @@
             
         </asp:ListView>
     </p>
+    <p>
+        &nbsp;</p>
     <p>
     </p>
 
