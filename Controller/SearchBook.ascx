@@ -7,6 +7,6 @@
                 <asp:ListItem>按作者</asp:ListItem>
             </asp:RadioButtonList>
             <asp:TextBox ID="search_tb" runat="server"></asp:TextBox>
-            <asp:Button ID="search_bt" runat="server" Text="查询" />
+            <asp:Button ID="search_bt" runat="server" Text="查询" OnClick="search_bt_Click" />
             <br />
         </asp:Panel>

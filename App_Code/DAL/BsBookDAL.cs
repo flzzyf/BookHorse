@@ -40,7 +40,7 @@ public class BsBookDAL : IBsBookDAL
         {
             sort = string.Format("order by b.{0}", sortExpression);
         }
-        string sql = String.Format("select a.name as CatName,b.* from BsCategory a,BsBook b where a.id=b.catID and {0} b.catID like '%{1}%' and b.author like '%{2}%' {3}", (catID == 0 ? "" : "b.catID=" + catID + " and"), name, author, sort);
+        string sql = String.Format("select a.name as CatName,b.* from BsCategory a,BsBook b where a.id=b.catID and {0} b.Name like '%{1}%' and b.author like '%{2}%' {3}", (catID == 0 ? "" : "b.catID=" + catID + " and"), name, author, sort);
         DataTable dt = SqlHelper.ExecuteQuery(sql, startRowIndex, maximumRows);
         if (dt != null)
         {

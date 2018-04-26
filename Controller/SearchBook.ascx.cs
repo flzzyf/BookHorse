@@ -11,4 +11,23 @@ public partial class Controller_SearchBook : System.Web.UI.UserControl
     {
 
     }
+
+    protected void search_bt_Click(object sender, EventArgs e)
+    {
+        Session["catID"] = "";
+        Session["bookName"] = "";
+        Session["bookAuthor"] = "";
+
+        if (search_radio.SelectedIndex == 0)
+        {
+            Session["bookName"] = search_tb.Text; 
+        }
+        else
+        {
+            Session["bookAuthor"] = search_tb.Text;
+
+        }
+        Response.Redirect("~/Web/MainWeb.aspx");
+
+    }
 }

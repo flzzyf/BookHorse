@@ -1,15 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MainWeb.aspx.cs" Inherits="Web_MainWeb" %>
 
 <%@ Register src="../Controller/CatMenu.ascx" tagname="CatMenu" tagprefix="uc1" %>
+<%@ Register Src="~/Controller/SearchBook.ascx" TagPrefix="uc1" TagName="SearchBook" %>
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Left" Runat="Server">
-    <p>
-        &nbsp;</p>
-    <p>
-        <br />
-    </p>
+    <uc1:SearchBook runat="server" ID="SearchBook" />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Navi" Runat="Server">
     <uc1:CatMenu ID="CatMenu1" runat="server" />
