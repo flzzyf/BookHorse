@@ -4,13 +4,25 @@
 <%@ Register Src="~/Controller/SearchBook.ascx" TagPrefix="uc1" TagName="SearchBook" %>
 
 
+<%@ Register src="../Controller/UserLogin.ascx" tagname="UserLogin" tagprefix="uc2" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
+
+<asp:Content ID="categoryMenu" ContentPlaceHolderID="categoryMenuContent" Runat="Server">
+        <uc1:CatMenu ID="CatMenu1" runat="server" />
+
+</asp:Content>
+
 <asp:Content ID="Content2" ContentPlaceHolderID="Left" Runat="Server">
+    <uc2:UserLogin ID="UserLogin1" runat="server" />
+    <br />
     <uc1:SearchBook runat="server" ID="SearchBook" />
 </asp:Content>
+
 <asp:Content ID="Content3" ContentPlaceHolderID="Navi" Runat="Server">
-    <uc1:CatMenu ID="CatMenu1" runat="server" />
+    qwe
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Content" Runat="Server">
 

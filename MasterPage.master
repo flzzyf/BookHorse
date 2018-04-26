@@ -19,7 +19,9 @@
             主菜单区
         </div>
         <div id="categoryMenu">
-            分类菜单区
+            <asp:ContentPlaceHolder ID="categoryMenuContent" runat="server">
+                分类菜单区
+            </asp:ContentPlaceHolder>
         </div>
         <div id="main">
             <div id="left">
