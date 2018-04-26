@@ -11,4 +11,9 @@ public partial class Controller_CatMenu : System.Web.UI.UserControl
     {
 
     }
+    protected void LinkButton1_Command(object sender, CommandEventArgs e)
+    {
+        Session["catID"] = e.CommandArgument;
+        Response.Redirect("~/Web/MainWeb.aspx");
+    }
 }

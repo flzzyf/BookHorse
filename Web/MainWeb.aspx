@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MainWeb.aspx.cs" Inherits="Web_MainWeb" %>
 
+<%@ Register src="../Controller/CatMenu.ascx" tagname="CatMenu" tagprefix="uc1" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Left" Runat="Server">
@@ -10,6 +12,7 @@
     </p>
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="Navi" Runat="Server">
+    <uc1:CatMenu ID="CatMenu1" runat="server" />
 </asp:Content>
 <asp:Content ID="Content4" ContentPlaceHolderID="Content" Runat="Server">
 
@@ -20,7 +23,7 @@
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
             <SelectParameters>
-                <asp:Parameter Name="catID" Type="Int32" DefaultValue="" />
+                <asp:SessionParameter DefaultValue="" Name="catID" SessionField="catID" Type="Int32" />
                 <asp:SessionParameter Name="name" SessionField="bookName" Type="String" />
                 <asp:SessionParameter Name="author" SessionField="bookAuthor" Type="String" />
                 <asp:Parameter Name="sortExpression" Type="String" />
@@ -29,7 +32,7 @@
             </SelectParameters>
         </asp:ObjectDataSource>
         <br />
-        <asp:ListView ID="ListView1" runat="server" DataSourceID="ObjectDataSource2" GroupItemCount="2">
+        <asp:ListView ID="ListView1" runat="server" DataSourceID="ObjectDataSource2" GroupItemCount="2" style="text-align: center; margin-right: 241px">
             
             <EmptyDataTemplate>
                 <table runat="server" style="">
@@ -48,26 +51,26 @@
             </GroupTemplate>
             
             <ItemTemplate>
-                <td runat="server" style="width: 16px">
-                    <table style="width: 1700%">
+                <td runat="server" style="width: 300px">
+                    <table style="width: 100%">
                         <tr>
                             <td rowspan="4">
                                 <asp:Image ID="Image1" runat="server" />
                             </td>
                             <td>书名：</td>
-                            <td>
+                            <td style="width: 191px">
                                 <asp:HyperLink ID="HyperLink1" runat="server" Target="_blank" Text='<%# Eval("Name") %>'></asp:HyperLink>
                             </td>
                         </tr>
                         <tr>
                             <td>作者：</td>
-                            <td>
+                            <td style="width: 191px">
                                 <asp:Literal ID="Literal1" runat="server" Text='<%# Eval("Author") %>'></asp:Literal>
                             </td>
                         </tr>
                         <tr>
                             <td style="height: 20px">单价：</td>
-                            <td style="height: 20px">
+                            <td style="height: 20px; width: 191px;">
                                 <asp:Literal ID="Literal2" runat="server" Text='<%# Eval("Price") %>'></asp:Literal>
                             </td>
                         </tr>
