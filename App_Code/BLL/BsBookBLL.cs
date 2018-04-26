@@ -25,8 +25,18 @@ public class BsBookBLL : IBsBookBLL
     {
         return bsBookDAL.FindBsBooks(catID, name, author, sortExpression,startRowIndex, maximumRows);
     }
+
+    public IList<BsBook> FindBsBooks()
+    {
+        return bsBookDAL.FindBsBooks();
+    }
     public int FindCount(int catID, string name, string author)
     {
         return bsBookDAL.FindCount(catID, name, author);
     }
+    /*
+    public int FindCount(int catID, string name, string author, string sortExpression, int startRowIndex, int maximumRows)
+    {
+        return bsBookDAL.FindCount(catID, name, author);
+    }*/
 }

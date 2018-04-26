@@ -8,5 +8,7 @@ public interface IBsBookBLL
     BsBook FindBsBook(int id); //按ID查询图书
     IList<BsBook> FindBsBooks(int catID, string name, string author,
     string sortExpression, int startRowIndex, int maximumRows); //分页查询图书
+
+    IList<BsBook> FindBsBooks(); //查询图书
     int FindCount(int catID, string name, string author);//查询记录数
 }

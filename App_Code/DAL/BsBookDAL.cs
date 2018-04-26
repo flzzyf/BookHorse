@@ -61,6 +61,33 @@ public class BsBookDAL : IBsBookDAL
         }
         return list;
     }
+
+    public IList<BsBook> FindBsBooks()
+    {
+        IList<BsBook> list = new List<BsBook>();
+        string sort = "";
+
+        string sql = String.Format("select * from BsBook");
+        DataTable dt = SqlHelper.ExecuteQuery(sql);
+        if (dt != null)
+        {
+            BsBook bsBook = null;
+            foreach (DataRow row in dt.Rows)
+            {
+                bsBook = new BsBook();
+                bsBook.BsCategory.Name = row["CatName"].ToString();
+                bsBook.ID = Int32.Parse(row["id"].ToString());
+                bsBook.CatID = Int32.Parse(row["catID"].ToString());
+                bsBook.Name = row["name"].ToString();
+                bsBook.Image = row["image"].ToString();
+                bsBook.Price = decimal.Parse(row["price"].ToString());
+                bsBook.Summary = row["summary"].ToString();
+                bsBook.Author = row["author"].ToString();
+                list.Add(bsBook);
+            }
+        }
+        return list;
+    }
     public int FindCount(int catID, string name, string author)
     {
         string sql = String.Format("select count(*) from BsBook where {0} catID like '%{1}%' and author like '%{2}%'", (catID == 0 ? "" : "catID=" + catID + " and"), name, author);
