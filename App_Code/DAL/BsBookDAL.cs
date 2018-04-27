@@ -75,7 +75,7 @@ public class BsBookDAL : IBsBookDAL
             foreach (DataRow row in dt.Rows)
             {
                 bsBook = new BsBook();
-                bsBook.BsCategory.Name = row["CatName"].ToString();
+                //bsBook.BsCategory.Name = row["CatName"].ToString();
                 bsBook.ID = Int32.Parse(row["id"].ToString());
                 bsBook.CatID = Int32.Parse(row["catID"].ToString());
                 bsBook.Name = row["name"].ToString();
