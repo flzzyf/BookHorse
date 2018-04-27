@@ -1,34 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="MainWeb.aspx.cs" Inherits="Web_MainWeb" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web/Common/MasterPage.master" AutoEventWireup="true" CodeFile="MainWeb.aspx.cs" Inherits="Web_index" %>
 
-<%@ Register src="../Controller/CatMenu.ascx" tagname="CatMenu" tagprefix="uc1" %>
-<%@ Register Src="~/Controller/SearchBook.ascx" TagPrefix="uc1" TagName="SearchBook" %>
-
-
-<%@ Register src="../Controller/UserLogin.ascx" tagname="UserLogin" tagprefix="uc2" %>
-
-
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-
-<asp:Content ID="categoryMenu" ContentPlaceHolderID="categoryMenuContent" Runat="Server">
-        <uc1:CatMenu ID="CatMenu1" runat="server" />
-
-</asp:Content>
-
-<asp:Content ID="Content2" ContentPlaceHolderID="Left" Runat="Server">
-    <uc2:UserLogin ID="UserLogin1" runat="server" />
-    <br />
-    <uc1:SearchBook runat="server" ID="SearchBook" />
-</asp:Content>
-
-<asp:Content ID="Content3" ContentPlaceHolderID="Navi" Runat="Server">
-    qwe
-</asp:Content>
-<asp:Content ID="Content4" ContentPlaceHolderID="Content" Runat="Server">
-
-
-    <p>
-        <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="DeleteBsBook" SelectCountMethod="FindCount" SelectMethod="FindBsBooks" SortParameterName="sortExpression" TypeName="BsBookBLL">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
+    <asp:ObjectDataSource ID="ObjectDataSource2" runat="server" DeleteMethod="DeleteBsBook" SelectCountMethod="FindCount" SelectMethod="FindBsBooks" SortParameterName="sortExpression" TypeName="BsBookBLL">
             <DeleteParameters>
                 <asp:Parameter Name="id" Type="Int32" />
             </DeleteParameters>
@@ -115,12 +89,6 @@
             </LayoutTemplate>
             
         </asp:ListView>
-    </p>
-    <p>
-        &nbsp;</p>
-    <p>
-    </p>
-
 
 </asp:Content>
 

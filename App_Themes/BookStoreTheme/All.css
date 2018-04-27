@@ -1,0 +1,98 @@
+﻿body
+{
+	margin: 0;
+	font-size: 12px;
+	font-family: 宋体,arial;
+	overflow:auto;
+}
+p 
+{
+	clear: both;
+	margin: 5px 0 0 0;
+}
+a
+{
+	color: #000080;
+	text-decoration: none;
+}
+a:hover
+{
+	color: #0000ff;
+}
+#head
+{
+	height: 65px;
+	background: url(images/head.jpg) 0 0 repeat-x;
+}
+#log
+{
+	height: 65px;
+	background: url(images/log.jpg) 0 0 no-repeat;
+	padding-left: 130px;
+	line-height: 65px;
+	font-size: 30px;
+}
+#mainMenu
+{
+	background-color: #00FFFF;
+	height: 28px;
+	width: 100%;
+	line-height: 28px;
+	text-align: center;
+}
+#categoryMenu
+{
+	background-color: #00FFCC;
+	height: 28px;
+	width: 100%;
+	line-height: 28px;
+	text-align: center;
+}
+#main
+{
+	clear: both;
+	font-size: 12px;
+	min-height: 200px;
+	height: 350px;
+	width: 100%;
+}
+
+#left
+{
+	background-color: #00FFFF;
+	float: left;
+	line-height: 25px;
+	text-align: center;
+	height: 350px;
+	width: 190px;
+}
+#left div
+{
+	padding: 10px 0 0 0;
+}
+#navigator
+{
+	margin-left: 190px;
+	text-align: left;
+	line-height:25px;
+	background-color:#FFCCCC;
+}
+#content
+{
+	margin-left: 190px;
+	padding-top: 10px;
+	text-align: left;
+	min-height:325px;
+}
+#bottom
+{
+	background-color: #00FFCC;
+	font-family: Arial,宋体;
+	clear: both;
+	text-align: center;
+	line-height: 150%;
+	width: 100%;
+	height: 60px;
+}
+
+
