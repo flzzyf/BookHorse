@@ -16,7 +16,8 @@
                         <asp:Label ID="Password" runat="server" Text="密码" Font-Size="Large"></asp:Label>
                         <asp:TextBox ID="tb_password" runat="server" TextMode="Password" Width="90px"></asp:TextBox>
                         <br />
-                        <asp:Button ID="bt_login" runat="server" Text="登录" OnClick="bt_login_Click" />
+                        <asp:CheckBox ID="CheckBox1" runat="server" Text="保存登录" />
+                        &nbsp;<asp:Button ID="bt_login" runat="server" Text="登录" OnClick="bt_login_Click" />
                     </div>
                 </asp:Panel>
             </asp:View>
@@ -26,6 +27,8 @@
                         <br />
                         <asp:Button ID="bt_logout" runat="server" Height="28px" OnClick="bt_logout_Click" Text="注销" Width="50px" />
                         &nbsp;<asp:Button ID="bt_modify" runat="server" Height="28px" Text="修改个人信息" />
+                        <br />
+                        <asp:LinkButton ID="bt_deleteCookie" runat="server" OnClick="LinkButton1_Click">删除Cookie</asp:LinkButton>
                     </div>
                 </asp:Panel>
             </asp:View>

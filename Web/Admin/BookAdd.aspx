@@ -39,8 +39,8 @@
                         <asp:Label ID="Label1" runat="server" Text='<%# Bind("CatID") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Name" HeaderText="Name" SortExpression="Name" />
-                <asp:TemplateField HeaderText="Image" SortExpression="Image">
+                <asp:BoundField DataField="Name" HeaderText="书名" SortExpression="Name" />
+                <asp:TemplateField HeaderText="图片" SortExpression="Image">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Image") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -51,8 +51,8 @@
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("Image") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price" />
-                <asp:TemplateField HeaderText="Summary" SortExpression="Summary">
+                <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
+                <asp:TemplateField HeaderText="简介" SortExpression="Summary">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox2" runat="server" Text='<%# Bind("Summary") %>'></asp:TextBox>
                     </EditItemTemplate>
@@ -63,7 +63,7 @@
                         <asp:Label ID="Label2" runat="server" Text='<%# Bind("Summary") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
-                <asp:BoundField DataField="Author" HeaderText="Author" SortExpression="Author" />
+                <asp:BoundField DataField="Author" HeaderText="作者" SortExpression="Author" />
                 <asp:TemplateField ShowHeader="False">
                     <InsertItemTemplate>
                         <div class="auto-style1">

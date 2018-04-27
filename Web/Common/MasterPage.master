@@ -31,8 +31,7 @@
             <uc2:BookFind ID="BookFind1" runat="server" />
         </div>
         <div id="navigator">
-            &nbsp;<asp:SiteMapPath ID="SiteMapPath1" runat="server">
-            </asp:SiteMapPath>
+            
         </div>
         <div id="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -40,7 +39,8 @@
         </div>
     </div>
     <div id="bottom">
-        页脚区
+        <asp:ContentPlaceHolder ID="content_Bottom" runat="server">
+            </asp:ContentPlaceHolder>
     </div>
     </form>
 </body>
