@@ -25,10 +25,14 @@
                 <asp:Panel ID="Panel2" runat="server">
                     <div class="auto-style1">
                         <br />
+                        <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                        <br />
                         <asp:Button ID="bt_logout" runat="server" Height="28px" OnClick="bt_logout_Click" Text="注销" Width="50px" />
                         &nbsp;<asp:Button ID="bt_modify" runat="server" Height="28px" Text="修改个人信息" />
                         <br />
                         <asp:LinkButton ID="bt_deleteCookie" runat="server" OnClick="LinkButton1_Click">删除Cookie</asp:LinkButton>
+                        <br />
+                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
                     </div>
                 </asp:Panel>
             </asp:View>

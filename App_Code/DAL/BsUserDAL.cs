@@ -44,6 +44,21 @@ public class BsUserDAL : IBsUserDAL
         sdr.Close();
         return bsUser;
     }
+
+    public BsUser FindBsUser(string id)
+    {
+        BsUser bsUser = null;
+        string sql = String.Format("select * from BsUser where ID='{0}'",id);
+        SqlDataReader sdr = SqlHelper.ExecuteReader(sql);
+        if (sdr == null)
+            return null;
+        if (sdr.Read())
+        {
+            bsUser = new BsUser(sdr.GetGuid(0), sdr.GetString(1), sdr.GetString(2), sdr.GetString(3), sdr.GetString(4), sdr.GetString(5), sdr.GetString(6), sdr.GetString(7), sdr.GetInt32(8));
+        }
+        sdr.Close();
+        return bsUser;
+    }
     public IList<BsUser> findBsUsers(string username)
     {
         IList<BsUser> list = new List<BsUser>();

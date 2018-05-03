@@ -25,6 +25,11 @@ public class BsUserBLL : IBsUserBLL
     {
         return bsUserDAL.FindBsUser(id);
     }
+
+    public BsUser FindBsUser(string id)
+    {
+        return bsUserDAL.FindBsUser(id);
+    }
     public IList<BsUser> findBsUsers(string username)
     {
         return bsUserDAL.findBsUsers(username);

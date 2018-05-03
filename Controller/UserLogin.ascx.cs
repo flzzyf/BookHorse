@@ -14,25 +14,25 @@ public partial class Controller_UserLogin : System.Web.UI.UserControl
     {
         //Session["user"] = null;
 
-        if (!IsPostBack)
+        if (!IsPostBack) //受控件加载
         {
             BsUser user = (BsUser)Session["user"];
             if (user == null)
             {
                 if (Request.Cookies["userID"] != null)
                 {
-                    /*
-                    int id = Int32.Parse(Request.Cookies["userID"].Value);
+                    string id = Request.Cookies["userID"].Value;
+
+                    tb_username.Text = id;
                     user = userBLL.FindBsUser(id);
                     Session["user"] = user;
-                    */
                 }
             }
         }
         if (Session["user"] != null)
         {
             BsUser user = (BsUser)Session["user"];
-            //Label1.Text = "欢迎" + user.Realname + "进入";
+            Label1.Text = "欢迎" + user.Realname + "进入";
             MultiView1.ActiveViewIndex = 1;
         }
         else
@@ -64,17 +64,25 @@ public partial class Controller_UserLogin : System.Web.UI.UserControl
         }
     }
 
-    protected void bt_logout_Click(object sender, EventArgs e)
+    protected void bt_logout_Click(object sender, EventArgs e) //注销
     {
         Session.Abandon();
+        ClearCookie();
+
         Response.Redirect(url_MainWeb);
     }
 
-    protected void LinkButton1_Click(object sender, EventArgs e)
+    protected void LinkButton1_Click(object sender, EventArgs e) //删除Cookie
+    {
+        ClearCookie();
+
+        Response.Redirect(url_MainWeb);
+    }
+
+    void ClearCookie()
     {
         HttpCookie cookie = new HttpCookie("userID");
         cookie.Expires = DateTime.Now.AddDays(-30);
         Response.Cookies.Add(cookie);
-        Response.Redirect(url_MainWeb);
     }
 }
