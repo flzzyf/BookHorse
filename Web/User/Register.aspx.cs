@@ -15,6 +15,7 @@ public partial class Web_User_Register : System.Web.UI.Page
 
     protected void CreateUserWizard1_CreatedUser(object sender, EventArgs e)
     {
-        Roles.AddUserToRole(CreateUserWizard1.UserName, "member");
+        //Roles.AddUserToRole(CreateUserWizard1.UserName, "member");
+        Roles.AddUserToRole(CreateUserWizard1.UserName, "admin");
     }
 }
