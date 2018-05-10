@@ -97,5 +97,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="content_Bottom" Runat="Server">
     Powered by ZYF
+    <br />
+    访问人数：<%= Application["AccessCount"] %>&nbsp;&nbsp; 当前在线：<%= Application["OnlineCount"] %><br />
 </asp:Content>
 
