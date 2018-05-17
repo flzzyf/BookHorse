@@ -60,7 +60,7 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Web/User/CartAdd.aspx?id=401">加入购物车</asp:HyperLink>
+                               <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Web/User/CartAdd.aspx?id=487">加入购物车</asp:HyperLink>
                             </td>
                         </tr>
                     </table>

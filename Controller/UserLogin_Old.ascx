@@ -1,4 +1,4 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UserLogin.ascx.cs" Inherits="Controller_UserLogin" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeFile="UserLogin_Old.ascx.cs" Inherits="Controller_UserLogin" %>
 
 <style type="text/css">
     .auto-style1 {

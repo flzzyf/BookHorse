@@ -1,14 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Web_User_Register" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web/Common/MasterPage.master" AutoEventWireup="true" CodeFile="Register.aspx.cs" Inherits="Web_User_Register" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <form id="form1">
     <div>
     
         <asp:CreateUserWizard ID="CreateUserWizard1" runat="server" BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" BorderWidth="1px" CreateUserButtonText="注册" Font-Names="Verdana" Font-Overline="False" Font-Size="12pt" OnCreatedUser="CreateUserWizard1_CreatedUser">
@@ -29,5 +22,7 @@
     
     </div>
     </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="content_Bottom" Runat="Server">
+</asp:Content>
+

@@ -7,12 +7,12 @@
 
 <asp:LoginView ID="LoginView1" runat="server">
     <AnonymousTemplate>
-        <asp:Login ID="Login1" runat="server" BackColor="#66FF66" FailureText="登录失败！" Font-Size="12pt" Width="189px">
+        <asp:Login ID="Login1" runat="server" BackColor="#66FF66" FailureText="登录失败！" Font-Size="12pt" Width="190px" DestinationPageUrl="~/Web/MainWeb.aspx" Height="116px">
             <TextBoxStyle Width="100px" />
         </asp:Login>
     </AnonymousTemplate>
     <LoggedInTemplate>
-        <asp:Panel ID="Panel1" runat="server" BackColor="#E6E2D8" Height="77px" Width="202px">
+        <asp:Panel ID="Panel1" runat="server" BackColor="#E6E2D8" Height="116px" Width="190px">
             <div class="auto-style1">
                 <br />
                 <asp:LoginName ID="LoginName1" runat="server" />
