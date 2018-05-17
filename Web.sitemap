@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+  <siteMapNode title="书城首页"  url="~/Web/MainWeb.aspx ">
+    <!--
+    <siteMapNode title="分类管理" url="~/Web/Admin/CategoryManage.aspx">
+      <siteMapNode title="添加分类" url="~/Web/Admin/CategoryAdd.aspx"/>
+    </siteMapNode>
+    -->
+    <siteMapNode title="图书管理"  url="~/Web/Admin/BookManager.aspx">
+      <siteMapNode title="图书添加"  url="~/Web/Admin/BookAdd.aspx">
+      <!--
+      <siteMapNode title="图书查询" url="~/Web/User/BookFind.aspx" />
+      -->
+      <siteMapNode title="图书查看" url="~/Web/User/BookShow.aspx" />
+      <siteMapNode title="修改图书" url="~/Web/User/BookEdit.aspx" />
+    </siteMapNode>
+    <siteMapNode title="用户管理" url="~/Web/Admin/UserManage.aspx" />
+      <!--
+      <siteMapNode title="修改用户" url="~/Training.aspx" />
+      -->
+      <siteMapNode title="注册用户" url="~/User/Register" />
+    </siteMapNode>
+      <!--
+    <siteMapNode title="购物车" url="~/Web/Memeber/CartBrowse.aspx"/>
+    -->
+  </siteMapNode>
+</siteMap>

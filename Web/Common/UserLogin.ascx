@@ -7,7 +7,7 @@
 
 <asp:LoginView ID="LoginView1" runat="server">
     <AnonymousTemplate>
-        <asp:Login ID="Login1" runat="server" BackColor="#66FF66" FailureText="登录失败！" Font-Size="12pt" Width="237px">
+        <asp:Login ID="Login1" runat="server" BackColor="#66FF66" FailureText="登录失败！" Font-Size="12pt" Width="189px">
             <TextBoxStyle Width="100px" />
         </asp:Login>
     </AnonymousTemplate>
