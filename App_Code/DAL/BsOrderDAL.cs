@@ -13,7 +13,9 @@ public class BsOrderDAL : IBsOrderDAL
 {
     public int AddBsOrder(BsOrder order, ICollection<CartItem> items)
     {
-        string sql = String.Format("insert into BsOrder(UserID) values ('{0}');", order.UserID);
+        DateTime d = DateTime.Now;
+        string sql = String.Format("insert into BsOrder(UserID, State) values ('{0}', '{1}', '{2}');", order.UserID, 1, d);
+      
         foreach (CartItem item in items)
         {
             sql += String.Format("insert into BsDetail(OrderID,BookID,Quantity,Price) values (IDENT_CURRENT( 'BsOrder' ),{0},{1},{2});", item.ID,item.Quantity,item.Price);

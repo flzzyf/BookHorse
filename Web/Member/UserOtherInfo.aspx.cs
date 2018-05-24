@@ -11,6 +11,7 @@ public partial class Web_Member_UserOtherInfo : System.Web.UI.Page
     private BsOrderBLL orderBLL = new BsOrderBLL();
     protected void Page_Load(object sender, EventArgs e)
     {
+        //非第一次提交则自动填写上次
         if (!IsPostBack && !String.IsNullOrEmpty(Profile.OtherInfo.Realname))
         {
             AddOrder();
@@ -35,9 +36,13 @@ public partial class Web_Member_UserOtherInfo : System.Web.UI.Page
         MembershipUser user = Membership.GetUser(Page.User.Identity.Name);
         BsOrder order = new BsOrder();
         order.UserID = (Guid)user.ProviderUserKey;
+        //Console.WriteLine(order.UserID);
+        order.State = 1;
+        //System.Diagnostics.Debug.WriteLine(order.UserID);
         int orderID = orderBLL.AddBsOrder(order, Profile.BsCartBLL.FindItems());
-        Profile.BsCartBLL.DeleteAll();
-        Profile.Save();
+        //清空购物车
+        //Profile.BsCartBLL.DeleteAll();
+        //Profile.Save();
         Literal1.Text = "结账成功!订单号为：" + orderID + "&nbsp;<a href='" + "OrderFind.aspx?userID=" + (Guid)user.ProviderUserKey + "'>查询订单</a>";
     }
 }
