@@ -10,7 +10,7 @@
     <title>网络图书商城</title>
 </head>
 <body style="margin: 0;">
-    <form id="form1" runat="server">
+    <form id="form5" runat="server">
     <div id="head">
         <div id="log">
             网络书城

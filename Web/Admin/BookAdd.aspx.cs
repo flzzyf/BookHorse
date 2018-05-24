@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class Web_Admin_BookEdit : System.Web.UI.Page
+public partial class Web_Admin_BookAdd : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -15,7 +15,7 @@ public partial class Web_Admin_BookEdit : System.Web.UI.Page
 
     protected void DetailsView1_ModeChanging(object sender, DetailsViewModeEventArgs e)
     {
-        if(e.CancelingEdit)
+        if (e.CancelingEdit)
         {
             Response.Redirect("BookManager.aspx");
         }
@@ -77,9 +77,5 @@ public partial class Web_Admin_BookEdit : System.Web.UI.Page
         }
         this.ClientScript.RegisterClientScriptBlock(this.GetType(), "", "alert('添加失败');", true);
     }
-
-
-
-
 
 }

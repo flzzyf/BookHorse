@@ -1,20 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="BookAdd.aspx.cs" Inherits="Web_Admin_BookEdit" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Web/Common/MasterPage.master" AutoEventWireup="true" CodeFile="BookAdd.aspx.cs" Inherits="Web_Admin_BookAdd" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>添加新书</title>
-    <style type="text/css">
-        .auto-style1 {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-    <div>
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+        <div>
     
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="BsBook" SelectMethod="FindBsBooks" TypeName="BsBookBLL" InsertMethod="AddBsBook" OnInserted="ObjectDataSource1_Inserted">
         </asp:ObjectDataSource>
@@ -40,6 +27,7 @@
                     </ItemTemplate>
                 </asp:TemplateField>
                 <asp:BoundField DataField="Name" HeaderText="书名" SortExpression="Name" />
+
                 <asp:TemplateField HeaderText="图片" SortExpression="Image">
                     <EditItemTemplate>
                         <asp:TextBox ID="TextBox3" runat="server" Text='<%# Bind("Image") %>'></asp:TextBox>
@@ -51,6 +39,7 @@
                         <asp:Label ID="Label3" runat="server" Text='<%# Bind("Image") %>'></asp:Label>
                     </ItemTemplate>
                 </asp:TemplateField>
+
                 <asp:BoundField DataField="Price" HeaderText="价格" SortExpression="Price" />
                 <asp:TemplateField HeaderText="简介" SortExpression="Summary">
                     <EditItemTemplate>
@@ -87,6 +76,7 @@
         <br />
     
     </div>
-    </form>
-</body>
-</html>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="content_Bottom" Runat="Server">
+</asp:Content>
+

@@ -1,6 +1,6 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="Web_Default" %>
 
-<%@ Register src="Common/UserLogin.ascx" tagname="UserLogin" tagprefix="uc1" %>
+<%@ Register src="~/Web/Common/UserLogin.ascx" tagname="UserLogin" tagprefix="uc1" %>
 
 <!DOCTYPE html>
 
