@@ -13,8 +13,8 @@ public class BsOrderDAL : IBsOrderDAL
 {
     public int AddBsOrder(BsOrder order, ICollection<CartItem> items)
     {
-        DateTime d = DateTime.Now;
-        string sql = String.Format("insert into BsOrder(UserID, State) values ('{0}', '{1}', '{2}');", order.UserID, 1, d);
+        string sql = String.Format("insert into BsOrder(UserID, State) values ('{0}', {1},);", order.UserID, 1);
+        //string sql = String.Format("insert into BsOrder(UserID, State) values ('{0}');", order.UserID);
       
         foreach (CartItem item in items)
         {

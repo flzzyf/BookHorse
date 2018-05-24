@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UserOtherInfo.aspx.cs" Inherits="Web_Member_UserOtherInfo" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="UserOrderInfo.aspx.cs" Inherits="Web_Member_UserOtherInfo" %>
 
 <!DOCTYPE html>
 

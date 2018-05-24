@@ -38,7 +38,7 @@
         <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">清空购物车</asp:LinkButton>
         <br />
         <br />
-        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Web/Member/UserOtherInfo.aspx">结算</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Web/Member/UserOrderInfo.aspx">结算</asp:HyperLink>
     </form>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="content_Bottom" Runat="Server">
