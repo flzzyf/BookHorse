@@ -9,9 +9,16 @@
                 <asp:BoundField DataField="ID" HeaderText="书号" />
                 <asp:BoundField DataField="Name" HeaderText="书名" ReadOnly="True" />
                 <asp:BoundField DataField="Price" HeaderText="单价" ReadOnly="True" />
-                <asp:BoundField DataField="Quantity" HeaderText="数量" />
-                <asp:CommandField ShowEditButton="True" />
-                <asp:CommandField ShowDeleteButton="True" />
+                <asp:TemplateField HeaderText="数量">
+            <EditItemTemplate>
+                <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Quantity") %>'></asp:TextBox>
+            </EditItemTemplate>
+            <ItemTemplate>
+                <asp:Label ID="Label1" runat="server" Text='<%# Bind("Quantity") %>'></asp:Label>
+            </ItemTemplate>
+        </asp:TemplateField>
+                <asp:CommandField InsertVisible="False" ShowDeleteButton="True" 
+            ShowEditButton="True" />
             </Columns>
             <EditRowStyle BackColor="#7C6F57" />
             <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
