@@ -5,5 +5,6 @@
 <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Web/Admin/BookManager.aspx">管理图书</asp:HyperLink>
 <asp:HyperLink ID="HyperLink5" runat="server" NavigateUrl="~/Web/Admin/UserManage.aspx">管理用户</asp:HyperLink>
 <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/Web/User/Register.aspx">注册</asp:HyperLink>
+<asp:HyperLink ID="HyperLink6" runat="server" NavigateUrl="~/Web/Member/OrderFind.aspx">订单查询</asp:HyperLink>
 
 

@@ -18,7 +18,8 @@
       <!--
       <siteMapNode title="修改用户" url="~/Training.aspx" />
       -->
-      <siteMapNode title="注册用户" url="~/User/Register" />
+      <siteMapNode title="注册用户" url="~/User/Register.aspx" />
+      <siteMapNode title="订单查询2" url="~/Member/OrderFind.aspx" />
     </siteMapNode>
       <!--
     <siteMapNode title="购物车" url="~/Web/Memeber/CartBrowse.aspx"/>

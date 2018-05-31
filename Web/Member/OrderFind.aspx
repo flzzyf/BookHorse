@@ -10,7 +10,7 @@
             GridLines="None" HorizontalAlign="Center" AutoGenerateColumns="False" 
             DataSourceID="ObjectDataSource1" Width="474px" AllowPaging="True" 
             DataKeyNames="ID" onrowcommand="GridView1_RowCommand" PageSize="4">
-            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+            <RowStyle BackColor="#E3EAEB" />
             <Columns>
                 <asp:ButtonField CommandName="ShowDetail" DataTextField="ID" HeaderText="订单号" 
                     Text="按钮" />
@@ -28,11 +28,16 @@
                     </ItemTemplate>
                 </asp:TemplateField>
             </Columns>
-            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
-            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
-            <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
-            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <EditRowStyle BackColor="#7C6F57" />
+            <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+            <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+            <SelectedRowStyle BackColor="#C5BBAF" Font-Bold="True" ForeColor="#333333" />
+            <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
             <AlternatingRowStyle BackColor="White" />
+            <SortedAscendingCellStyle BackColor="#F8FAFA" />
+            <SortedAscendingHeaderStyle BackColor="#246B61" />
+            <SortedDescendingCellStyle BackColor="#D4DFE1" />
+            <SortedDescendingHeaderStyle BackColor="#15524A" />
         </asp:GridView>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
             SelectMethod="FindBsOrders" TypeName="BsOrderBLL">
