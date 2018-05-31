@@ -58,7 +58,7 @@
                 <asp:BoundField DataField="OrderID" HeaderText="订单号" />
                 <asp:BoundField DataField="BookID" HeaderText="图书号" />
                 
-                
+
 
                 <asp:BoundField DataField="Quantity" HeaderText="数量" />
                 <asp:BoundField DataField="Price" HeaderText="单价" />
