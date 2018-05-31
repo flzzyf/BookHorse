@@ -52,20 +52,14 @@
         <br />
         <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="False" 
             CellPadding="4" ForeColor="#333333" GridLines="None" HorizontalAlign="Center" 
-            Width="524px">
+            Width="524px" AllowPaging="True" PageSize="4">
             <RowStyle BackColor="#EFF3FB" />
             <Columns>
                 <asp:BoundField DataField="OrderID" HeaderText="订单号" />
                 <asp:BoundField DataField="BookID" HeaderText="图书号" />
-                <asp:TemplateField HeaderText="书名">
-                    <EditItemTemplate>
-                        <asp:TextBox ID="TextBox1" runat="server" Text='<%# Bind("Name") %>'></asp:TextBox>
-                    </EditItemTemplate>
-                    <ItemTemplate>
-                        <asp:Label ID="Label1" runat="server" 
-                            Text='<%# ((BsBook)Eval("BsBook")).Name %>'></asp:Label>
-                    </ItemTemplate>
-                </asp:TemplateField>
+                
+                
+
                 <asp:BoundField DataField="Quantity" HeaderText="数量" />
                 <asp:BoundField DataField="Price" HeaderText="单价" />
             </Columns>

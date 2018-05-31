@@ -40,9 +40,11 @@ public partial class Web_Member_UserOtherInfo : System.Web.UI.Page
         order.State = 1;
         //System.Diagnostics.Debug.WriteLine(order.UserID);
         int orderID = orderBLL.AddBsOrder(order, Profile.BsCartBLL.FindItems());
+
         //清空购物车
-        //Profile.BsCartBLL.DeleteAll();
-        //Profile.Save();
+        Profile.BsCartBLL.DeleteAll();
+        Profile.Save();
+
         Literal1.Text = "结账成功!订单号为：" + orderID + "&nbsp;<a href='" + "OrderFind.aspx?userID=" + (Guid)user.ProviderUserKey + "'>查询订单</a>";
     }
 }
